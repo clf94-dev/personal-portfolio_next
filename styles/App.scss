@@ -1,0 +1,762 @@
+$grayish-dark-blue: #33323D;
+$very-light-grey: #fafafa;
+$dark-blue: #203A4C;
+$desaturated-cyan: #5fb4a2;
+$font-heading: 'Ibarra Real Nova',
+serif;
+$font-body: 'Public Sans',
+sans-serif;
+$font-weight3: 300;
+$font-weight4: 400;
+$font-weight6: 600;
+$font-weight7: 700;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//-----------------Navbar section---------------
+.navbar {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #fff;
+    top: 0;
+    z-index: 5;
+    .navbar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        max-width: 1600px;
+        .navbar-logo {
+            display: flex;
+            justify-self: start;
+            margin-left: 20px;
+            align-items: center;
+        }
+        .nav-menu {
+            @media screen and (min-width: 756px) {
+                margin-left: 100px;
+            }
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            text-align: center;
+            width: 60vw;
+            justify-content: end;
+            margin-right: 2rem;
+            .nav-item {
+                .nav-links {
+                    color: $dark-blue;
+                    font-family: $font-body;
+                    font-weight: $font-weight4;
+                    display: flex;
+                    text-decoration: none;
+                    padding: 1.7rem 1rem;
+                    height: 100%;
+                    &:hover {
+                        color: $desaturated-cyan;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    .fa-bars,
+    .fa-times {
+        color: $dark-blue;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column !important;
+        grid-gap: 5px;
+        width: 100%;
+        height: 38vh;
+        position: absolute;
+        top: 80px;
+        right: - 100%;
+        opacity: 1;
+        transition: all 0.3s ease-in;
+        .navbar-logo {
+            position: absolute !important;
+            top: 0 !important;
+            right: 0 !important;
+            transform: translate(25%, 50%) !important;
+        }
+    }
+    .nav-menu.active {
+        justify-content: start !important;
+        background-color: $dark-blue;
+        right: 0;
+        opacity: 1;
+        transition: all 0.3s ease;
+        z-index: 5;
+        .nav-item {
+            .nav-links {
+                justify-content: center !important;
+                margin: 5px 0 auto;
+                padding: 2rem !important;
+                color: white !important;
+                width: 100%;
+                display: table;
+                &:hover {
+                    color: $dark-blue !important;
+                    background-color: white;
+                }
+            }
+        }
+    }
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.8rem;
+        transform: translate(-100%, 60%);
+        cursor: pointer;
+        .fa-times {
+            font-size: 2rem;
+        }
+    }
+}
+
+//---------------------Hero Section ------------------
+.hero-section-row {
+    padding: 5% 7%;
+    @media screen and (max-width: 375px) {
+        display: flex;
+        flex-flow: column-reverse !important;
+    }
+    .text-col {
+        padding: 3% 7%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        @media screen and (min-width: 960px) {
+            position: absolute;
+            left: 0;
+            top: 35vw;
+            height: 26vw;
+            padding-right: 12%;
+        }
+        h1 {
+            font-family: $font-heading;
+            font-size: 50px;
+            font-weight: $font-weight7;
+            margin-bottom: 10px;
+        }
+    }
+    .img-col {
+        .hero-section-img {
+            width: 100%;
+            @media screen and (min-width: 960px) {
+                width: 200% !important;
+            }
+        }
+    }
+}
+
+//----------------------About Me section -----------------
+.about-me-row {
+    padding: 3% 7%;
+    .img-col {
+        .aboutme-img {
+            margin-right: 5%;
+            width: 100%;
+            @media screen and (min-width: 756px) {
+                width: 90%;
+            }
+        }
+    }
+    .text-col {
+        text-align: left;
+        @media screen and (min-width: 756px) {
+            padding: 1% 20% 1% 3%;
+        }
+        h3 {
+            margin: 20px auto;
+            font-family: $font-heading;
+            font-size: 40px;
+        }
+        p {
+            margin-bottom: 10px;
+            font-family: $font-body;
+            font-size: 20px;
+        }
+        Button {
+            margin-top: 20px;
+            font-size: 20px;
+            @media screen and (max-width: 756px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//----------------------Languages Section------------------
+.languages-cont {
+    background-color: rgb(51, 96, 127);
+    padding: 5% 7%;
+    h3 {
+        font-family: $font-heading;
+        font-size: 40px;
+        font-weight: $font-weight6;
+        color: $desaturated-cyan;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .icons-row {
+        margin-bottom: 20px;
+        padding: 3% 0;
+        text-align: center;
+        color: rgb(196, 255, 239);
+        .react:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #64D4F3;
+        }
+        .angular:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #C3002F;
+        }
+        .vue:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #4DBA87;
+        }
+        .javascript:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #FCE41F;
+        }
+        .css:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #2173F7;
+        }
+        .html:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #F74E0D;
+        }
+        .sass:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #C76494;
+        }
+        .boots:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #7A10F2;
+        }
+        .npm:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #C13535;
+        }
+        .git:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+            transition: all 0.5s ease-out;
+            color: #302F2F;
+        }
+    }
+}
+
+//----------------------Frameworks section------------------
+.frameworks-cont {
+    padding: 5% 7%;
+    text-decoration: none !important;
+    h3 {
+        font-family: $font-heading;
+        font-size: 40px;
+        font-weight: $font-weight6;
+        margin-bottom: 10px;
+        color: $grayish-dark-blue;
+        text-align: center;
+        margin-bottom: 30px;
+        .react {
+            color: #64D4F3;
+        }
+        .angular {
+            color: #C3002F;
+        }
+        .vue {
+            color: #4DBA87;
+        }
+    }
+    p {
+        color: $grayish-dark-blue;
+        text-align: center;
+        margin-bottom: 10px;
+        font-family: $font-body;
+        font-size: 20px;
+    }
+    .link {
+        text-decoration: none;
+        .react-cont {
+            padding: 5%;
+            border-radius: 20px;
+            border: 1px solid #64D4F3;
+            margin-bottom: 20px;
+            h3 {
+                padding-bottom: 30px;
+                .react {
+                    position: relative;
+                    top: 15px;
+                    left: 15px;
+                    color: #64D4F3;
+                }
+            }
+            p {
+                text-align: center;
+                margin-bottom: 10px;
+                font-family: $font-body;
+                font-size: 20px;
+                .font-awe {
+                    color: #339AF0;
+                }
+                .sass {
+                    color: #C76494;
+                }
+            }
+            &:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: #64D4F3;
+                h3 {
+                    color: $very-light-grey;
+                    .react {
+                        color: $very-light-grey;
+                    }
+                }
+                p {
+                    color: $very-light-grey;
+                    .font-awe {
+                        color: $very-light-grey;
+                    }
+                    .sass {
+                        color: $very-light-grey;
+                    }
+                }
+            }
+        }
+        .angular-cont {
+            padding: 5% 7%;
+            border-radius: 20px;
+            border: 1px solid#C3002F;
+            margin-bottom: 20px;
+            h3 {
+                padding-bottom: 30px;
+                .angular {
+                    position: relative;
+                    top: 15px;
+                    left: 15px;
+                    color: #C3002F;
+                }
+            }
+            p {
+                text-align: center;
+                margin-bottom: 10px;
+                font-family: $font-body;
+                font-size: 20px;
+                .font-awe {
+                    color: #339AF0;
+                }
+                .sass {
+                    color: #C76494;
+                }
+            }
+            &:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: #C3002F;
+                h3 {
+                    color: $very-light-grey;
+                    .angular {
+                        color: $very-light-grey;
+                    }
+                }
+                p {
+                    color: $very-light-grey;
+                    .font-awe {
+                        color: $very-light-grey;
+                    }
+                    .sass {
+                        color: $very-light-grey;
+                    }
+                }
+            }
+        }
+        .vue-cont {
+            padding: 5% 7%;
+            border-radius: 20px;
+            border: 1px solid#4DBA87;
+            h3 {
+                padding-bottom: 30px;
+                .vue {
+                    position: relative;
+                    top: 15px;
+                    left: 15px;
+                    color: #4DBA87;
+                }
+            }
+            p {
+                text-align: center;
+                margin-bottom: 10px;
+                font-family: $font-body;
+                font-size: 20px;
+                .boots {
+                    color: #7A10F2;
+                }
+                .font-awe {
+                    color: #339AF0;
+                }
+                .css {
+                    color: #2173F7;
+                }
+            }
+            &:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: #4DBA87;
+                h3 {
+                    color: $very-light-grey;
+                    .vue {
+                        color: $very-light-grey;
+                    }
+                }
+                p {
+                    color: $very-light-grey;
+                    .font-awe {
+                        color: $very-light-grey;
+                    }
+                    .css {
+                        color: $very-light-grey;
+                    }
+                    .boots {
+                        color: $very-light-grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------------------Portofolio Rows-----------------
+.project-row {
+    padding: 5% 7%;
+    height: fit-content;
+    .text-col {
+        padding: 10% 7%;
+        h3 {
+            font-family: $font-heading;
+            font-size: 40px;
+            font-weight: $font-weight6;
+            color: $grayish-dark-blue;
+            margin-bottom: 10px;
+        }
+        p {
+            font-family: $font-body;
+            font-size: 18px;
+            font-weight: $font-weight4;
+            color: $grayish-dark-blue;
+            margin-bottom: 10px;
+        }
+        Button {
+            width: 250px;
+            font-family: $font-body;
+            margin: 30px auto;
+            font-size: 20px;
+            @media screen and (max-width: 756px) {
+                width: 100%;
+            }
+        }
+    }
+    .img-col {
+        .project-img {
+            width: 100%;
+        }
+    }
+}
+
+.centered {
+    .img-col {
+        padding-top: 9%;
+    }
+}
+
+@media screen and (min-width: 756px) {
+    .reverse {
+        flex-flow: row-reverse;
+    }
+}
+
+//----------------------------Full project view------------------------
+.full-project-cont {
+    padding: 5% 7% 2%;
+    .project-top {
+        align-self: center;
+        width: 100%;
+    }
+    .description-row {
+        .left-text {
+            padding-right: 20%;
+            hr {
+                justify-self: left;
+                margin: 30px 0;
+                width: 60%;
+            }
+            h2 {
+                font-family: $font-heading;
+                font-weight: $font-weight7;
+                font-size: 40px;
+            }
+            p {
+                margin: 10px auto;
+                font-family: $font-body;
+                font-weight: $font-weight3;
+                font-size: 15px;
+            }
+            h5 {
+                margin: 10px auto;
+                font-family: $font-body;
+                font-size: 16px;
+                font-weight: $font-weight4;
+                color: $desaturated-cyan;
+            }
+            a {
+                text-decoration: none;
+                color: $grayish-dark-blue;
+                button {
+                    cursor: pointer;
+                    margin-top: 20px;
+                    padding: 3% 5%;
+                    background-color: transparent;
+                    color: $grayish-dark-blue;
+                    border: 1px solid $grayish-dark-blue;
+                    &:hover {
+                        transition: all 0.3s ease-out;
+                        color: $very-light-grey;
+                        background-color: $grayish-dark-blue;
+                        transition: 250ms;
+                    }
+                    transition: all 0.3s ease-out;
+                    @media screen and (max-width: 756px) {
+                        width: 50%;
+                    }
+                }
+            }
+            i {
+                position: relative;
+                top: 12px;
+                left: 15px;
+                &.react {
+                    color: #64D4F3;
+                }
+                &.vue {
+                    color: #4DBA87;
+                }
+                &.angular {
+                    color: #C3002F;
+                }
+                &.javas {
+                    color: #FCE41F;
+                }
+            }
+        }
+        .right-text {
+            margin-top: 4%;
+            .text-cont {
+                padding-right: 20%;
+                h3 {
+                    font-family: $font-heading;
+                    font-size: 35px;
+                    font-weight: $font-weight6;
+                }
+                p {
+                    margin: 10px auto;
+                    font-family: $font-body;
+                    font-weight: $font-weight3;
+                    font-size: 15px;
+                }
+            }
+            img {
+                width: 100%;
+                margin: 15px auto;
+            }
+        }
+    }
+    .next-prev-proj {
+        padding-top: 30px;
+        h5 {
+            font-size: 14px;
+            font-family: $font-body;
+            font-weight: $font-weight3;
+        }
+        h3 {
+            margin-top: 5px;
+            font-size: 20px;
+            font-family: $font-heading;
+            font-weight: $font-weight7;
+        }
+        .previous-text {
+            text-align: start;
+            padding-top: 20px;
+        }
+        .next-text {
+            text-align: end;
+            padding-top: 20px;
+        }
+        Button {
+            width: 50px;
+            height: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            &:hover {
+                background-color: #5fb4a2;
+                color: #33323D;
+                border: 1px solid #33323D;
+                transition: all 0.3s ease-out;
+            }
+        }
+    }
+}
+
+//----------------------CTA section ------------------
+.cta-cont {
+    padding: 3% 7% 5%;
+    align-items: center;
+    .text-col {
+        h2 {
+            font-size: 45px;
+            font-family: $font-heading;
+            font-weight: $font-weight6;
+        }
+    }
+    .btn-col {
+        text-align: end;
+        Button {
+            margin-top: 20px;
+            font-size: 18px;
+            @media screen and (max-width: 756px) {
+                width: 100%;
+            }
+        }
+    }
+    @media screen and (max-width:756px) {
+        text-align: center;
+        align-items: center;
+        .btn-col {
+            .cta-btn {
+                margin: 1% 25% !important;
+            }
+        }
+    }
+}
+
+//-------------------------------Footer Section --------------------
+.footer-cont {
+    background-color: $dark-blue;
+    z-index: 2;
+    padding: 5% 7%;
+    align-items: center;
+    .footer-item {
+        text-align: center;
+        @media screen and (max-width: 700px) {
+            margin: 10px auto;
+        }
+        .footer-link {
+            text-decoration: none;
+            font-family: $font-body;
+            font-weight: $font-weight4;
+            text-align: center;
+            color: $very-light-grey;
+            &:hover {
+                color: $desaturated-cyan;
+            }
+        }
+        .social-row {
+            justify-content: center;
+            margin-top: 2%;
+            .social-icon {
+                margin: auto 10px;
+            }
+        }
+    }
+    @media screen and (max-width: 375px) {
+        text-align: center;
+    }
+}
+
+//-----------------------------contact me --------------------
+.contact-me-cont {
+    padding: 3% 7%;
+    hr {
+        margin: 30px 6% 30px 0;
+        width: 100%;
+        color: $very-light-grey;
+    }
+    .contact-top {
+        .title-col {
+            align-items: center;
+            h3 {
+                font-family: $font-body;
+                font-size: 35px;
+                font-weight: $font-weight6;
+            }
+        }
+        .right-col {
+            padding: 0 0 0 3%;
+            p {
+                margin: 10px auto;
+                font-family: $font-body;
+                font-weight: $font-weight3;
+                font-size: 18px;
+                padding-right: 15%;
+            }
+            .contact-me-cont {
+                color: $very-light-grey;
+                margin-top: 50px;
+                margin-left: 0;
+                padding-left: 0 !important;
+                .footer-link {
+                    text-decoration: none !important;
+                    color: $grayish-dark-blue;
+                    &:hover {
+                        color: $desaturated-cyan;
+                    }
+                    .social-icon {
+                        margin: auto 5px;
+                    }
+                }
+            }
+        }
+    }
+    .input-cont {
+        h2 {
+            font-size: 45px;
+            font-family: $font-body;
+            font-weight: $font-weight6;
+        }
+    }
+}
