@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import Grid2 from '@mui/material/Unstable_Grid2'
 import {Button} from './Button';
+import {StyledProjectRow} from './ProjectRow.styled'
 
 
 import { Manage, Bookmark, Insure, IPTrackerTop, CountriesDictionary, Covid, Crypto, Scoot, EasyBank, ChatApp, Dine, PhotoSnap, Arch, PayApi, MyTeam } from './PortfolioImg'
@@ -13,13 +14,15 @@ function ProjectRow(props) {
     useEffect(() => {
         AOS.init();
     }, []);
+    console.log({props})
     return (
-        <div>
-            <Grid2 container direction="row" className={props.classes} data-aos={props.animation} data-aos-duration="1200">
+        <StyledProjectRow reverse={props.classes.includes('reverse')} centered={props.classes.includes('centered')} className={props.classes} data-aos={props.animation} data-aos-duration="1200">
                 <Grid2 item md={6} xs={12} className='img-col'>
                     <Image
                         src={ProjectsImg[props.index]}
                         alt=" image"
+                        width={500}
+                        height={500}
                         className='project-img'/>
                 </Grid2>
                 <Grid2 item md={6} xs={12} className='text-col' direction='column'>
@@ -35,8 +38,8 @@ function ProjectRow(props) {
 
                 </Grid2>
 
-            </Grid2>
-        </div>
+       
+        </StyledProjectRow>
     )
 }
 

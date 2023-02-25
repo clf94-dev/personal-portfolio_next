@@ -17,7 +17,7 @@ $font-weight7: 700;
 }
 
 //-----------------Navbar section---------------
-.navbar {
+/* .navbar {
     height: 80px;
     display: flex;
     justify-content: center;
@@ -129,10 +129,10 @@ $font-weight7: 700;
             font-size: 2rem;
         }
     }
-}
+} */
 
 //---------------------Hero Section ------------------
-.hero-section-row {
+/* .hero-section-row {
     padding: 5% 7%;
     @media screen and (max-width: 375px) {
         display: flex;
@@ -167,7 +167,7 @@ $font-weight7: 700;
         }
     }
 }
-
+ */
 //----------------------About Me section -----------------
 .about-me-row {
     padding: 3% 7%;
@@ -463,7 +463,7 @@ $font-weight7: 700;
 }
 
 //----------------------Portofolio Rows-----------------
-.project-row {
+/* .project-row {
     padding: 5% 7%;
     height: fit-content;
     .text-col {
@@ -510,7 +510,7 @@ $font-weight7: 700;
         flex-flow: row-reverse;
     }
 }
-
+ */
 //----------------------------Full project view------------------------
 .full-project-cont {
     padding: 5% 7% 2%;
